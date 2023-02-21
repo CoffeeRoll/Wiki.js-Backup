@@ -2,17 +2,20 @@
 title: K3D Cluster Setup
 description: 
 published: true
-date: 2023-02-21T05:08:48.898Z
+date: 2023-02-21T05:11:31.861Z
 tags: 
 editor: markdown
 dateCreated: 2023-02-20T05:31:49.931Z
 ---
 
 # K3D Cluster Setup
-## Steps:
+## K3D Setup:
 
 1. Create Cluster
 ```k3d cluster create test-cluster --agents 1 --servers 1```
+
+
+## Rancher Setup:
 
 1. Create Namespace for Rancher
 ```kubectl create namespace cattle-system```
@@ -29,9 +32,7 @@ dateCreated: 2023-02-20T05:31:49.931Z
 1. Wait for Rancher to Start
 ```kubectl -n cattle-system rollout status deploy/rancher```
 
-------
-
-Uninstalling
+## Uninstalling:
 
 1. Uninstall rancher-webhook
 ```helm -n cattle-system uninstall rancher-webhook```
