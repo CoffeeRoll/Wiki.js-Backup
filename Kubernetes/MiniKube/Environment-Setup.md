@@ -2,7 +2,7 @@
 title: Environment Setup
 description: Environment setup for a minikube cluster 
 published: true
-date: 2023-03-18T20:49:28.040Z
+date: 2023-03-18T21:22:32.119Z
 tags: k8s, minikube
 editor: markdown
 dateCreated: 2023-03-18T20:49:28.040Z
@@ -19,3 +19,10 @@ dateCreated: 2023-03-18T20:49:28.040Z
 ```https://helm.sh/docs/intro/install/```
 1. Install traefik
 ```https://doc.traefik.io/traefik/getting-started/install-traefik/#use-the-helm-chart```
+
+# DevOps Setup
+1. Install OpenProject
+``` https://charts.openproject.org/```
+1. Install Jenkins
+1. Install Nexus
+1. Install Wiki.js
