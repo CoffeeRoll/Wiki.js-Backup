@@ -2,10 +2,10 @@
 title: Cluster Setup
 description: K3D Cluster Setup Notes
 published: true
-date: 2023-06-11T21:23:04.446Z
+date: 2023-09-03T19:58:40.253Z
 tags: k3d, k8s
 editor: markdown
-dateCreated: 2023-06-10T19:32:07.576Z
+dateCreated: 2023-09-02T19:15:57.048Z
 ---
 
 # Cluster Setup
@@ -21,9 +21,24 @@ Still Researching
 
 1. Patch Traefik to allow self-signed certs
 ``` sudo kubectl patch deploy -n kube-system traefik --type='json' -p='[{"op": "add", "path": "/spec/template/spec/containers/0/args/-", "value": "--serversTransport.insecureSkipVerify=true"}]' ```
+
 2. Create a secret for the TLS certs
 ```sudo kubectl -n kube-system create secret tls "ingress-tls" --key="ingress.key" --cert="ingress.crt"```
 
+3. Create a TLSStore named "default"
+```yaml
+apiVersion: traefik.containo.us/v1alpha1
+kind: TLSStore
+metadata:
+  name: default
+  namespace: kube-system
+
+spec:
+  defaultCertificate:
+    secretName: tls-secret
+```
+
+4. Apply IngressRoutes as normal 
 
 ### Self-signed (Custom CA)
 
