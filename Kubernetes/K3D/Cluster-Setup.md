@@ -2,7 +2,7 @@
 title: Cluster Setup
 description: K3D Cluster Setup Notes
 published: true
-date: 2023-09-03T19:58:40.253Z
+date: 2023-09-05T23:25:55.923Z
 tags: k3d, k8s
 editor: markdown
 dateCreated: 2023-09-02T19:15:57.048Z
@@ -25,7 +25,9 @@ Still Researching
 2. Create a secret for the TLS certs
 ```sudo kubectl -n kube-system create secret tls "ingress-tls" --key="ingress.key" --cert="ingress.crt"```
 
-3. Create a TLSStore named "default"
+3. Create a TLSStore named "default" - Any other name will not work [See Traefik Docs](https://doc.traefik.io/traefik/routing/providers/kubernetes-crd/#kind-tlsstore)
+  - List all tls secrets in the default store and Traefik will automatically serv the correct one based on the incomming request's SNI
+  - Requests that do not match any given cert will be provided with the TRAEFIK DEFAULT CERT
 ```yaml
 apiVersion: traefik.containo.us/v1alpha1
 kind: TLSStore
@@ -34,8 +36,9 @@ metadata:
   namespace: kube-system
 
 spec:
-  defaultCertificate:
-    secretName: tls-secret
+  certificates:
+    - secretName: some-domain-tls-secret
+    - secretName: some-other-domain-tls-secret
 ```
 
 4. Apply IngressRoutes as normal 
