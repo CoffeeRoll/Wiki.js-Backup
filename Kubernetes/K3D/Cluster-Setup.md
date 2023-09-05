@@ -2,13 +2,15 @@
 title: Cluster Setup
 description: K3D Cluster Setup Notes
 published: true
-date: 2023-09-05T23:43:14.548Z
+date: 2023-09-05T23:49:38.268Z
 tags: k3d, k8s
 editor: markdown
 dateCreated: 2023-09-02T19:15:57.048Z
 ---
 
 # Cluster Setup
+How to setup and configure a bare-bones k3d cluster with custom certificates 
+
 ## K3D Setup
 
 1. Create Cluster
