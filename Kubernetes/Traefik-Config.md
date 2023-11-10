@@ -2,7 +2,7 @@
 title: Traefik Config
 description: Traefik v2
 published: true
-date: 2023-11-10T05:29:10.772Z
+date: 2023-11-10T05:32:49.953Z
 tags: 
 editor: markdown
 dateCreated: 2023-11-10T05:29:10.772Z
