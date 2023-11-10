@@ -1,8 +1,8 @@
 ---
 title: Welcome
-description: My local Wiki.js instance
+description: Front Page of the Wiki
 published: true
-date: 2023-11-10T23:53:11.842Z
+date: 2023-11-10T23:54:00.522Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-02T19:15:55.631Z
