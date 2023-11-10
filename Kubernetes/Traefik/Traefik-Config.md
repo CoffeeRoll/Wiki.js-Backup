@@ -2,7 +2,7 @@
 title: Traefik Config
 description: Traefik v2
 published: true
-date: 2023-11-10T05:32:49.953Z
+date: 2023-11-10T23:49:36.865Z
 tags: 
 editor: markdown
 dateCreated: 2023-11-10T05:29:10.772Z
@@ -14,7 +14,7 @@ dateCreated: 2023-11-10T05:29:10.772Z
 
 Official documentation can be found here: https://doc.traefik.io/traefik/
 
-- **Much of the example configurations have ```apiVersion: traefik.us/v1alpha1"``` but it should be ```traefik.containo.us/v1alpha1```**
+- **Much of the example configurations use ```apiVersion: traefik.us/v1alpha1"``` but it should be ```traefik.containo.us/v1alpha1```**
 
 - This documentation only covers how to configure Traefik after it is already running in a k3d/k3s cluster. 
 Any yaml samples found here can be applied to a cluster with ```kubectl apply -f some-config.yaml```
