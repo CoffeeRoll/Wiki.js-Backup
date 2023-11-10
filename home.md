@@ -2,13 +2,14 @@
 title: Welcome
 description: My local Wiki.js instance
 published: true
-date: 2023-06-10T19:40:43.888Z
+date: 2023-11-10T23:53:11.842Z
 tags: 
 editor: markdown
-dateCreated: 2023-06-10T19:32:02.968Z
+dateCreated: 2023-09-02T19:15:55.631Z
 ---
 
-# Hello World
-This is just a test page to make sure everything is working and syncing with github!
+# Welcome to CoffeeRoll's Wiki
 
-Hello world!
+This is mainly a place I use for notes and things I don't want to forget pertaining mainly to software development. 
+
+I have no idea how you found this site. 
