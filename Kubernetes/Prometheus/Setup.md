@@ -2,7 +2,7 @@
 title: Prometheus Setup
 description: K8s Monitoring 
 published: true
-date: 2023-12-07T03:17:13.335Z
+date: 2023-12-07T03:19:05.123Z
 tags: k8s, prometheus
 editor: markdown
 dateCreated: 2023-12-07T03:17:13.335Z
@@ -24,3 +24,25 @@ helm repo update
 
 helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring --create-namespace
 ```
+
+It can be exposed with an IngressRoute like
+
+```yaml
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: grafana-ingress
+  namespace: monitoring
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+  - match: Host(`grafana.my-site.com`)
+    kind: Rule
+    services:
+    - name: prometheus-grafana
+      port: 80
+      kind: Service
+```
+
