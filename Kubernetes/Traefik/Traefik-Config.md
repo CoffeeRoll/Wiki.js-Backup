@@ -2,7 +2,7 @@
 title: Traefik Config
 description: Traefik v2
 published: true
-date: 2023-11-10T23:49:36.865Z
+date: 2023-12-07T02:33:07.038Z
 tags: 
 editor: markdown
 dateCreated: 2023-11-10T05:29:10.772Z
@@ -18,6 +18,33 @@ Official documentation can be found here: https://doc.traefik.io/traefik/
 
 - This documentation only covers how to configure Traefik after it is already running in a k3d/k3s cluster. 
 Any yaml samples found here can be applied to a cluster with ```kubectl apply -f some-config.yaml```
+
+## Traefik Dashboard
+
+1. Enable the dashboard
+``` kubectl patch deploy -n kube-system traefik --type='json' -p='[{"op": "add", "path": "/spec/template/spec/containers/0/args/-", "value": "--api.dashboard=true"}]' ```
+
+1. Optionally, expose the Dashboard on HTTP
+``` kubectl patch deploy -n kube-system traefik --type='json' -p='[{"op": "add", "path": "/spec/template/spec/containers/0/args/-", "value": "--api.insecure=true"}]' ```
+
+1. Apply an IngressRoute to access the dashboard
+```yaml
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: dashboard
+  namespace: kube-system
+spec:
+  entryPoints:
+    - web # <-- only works if api.insecure = true
+    - websecure
+  routes:
+  - match: Host(`1.2.3.4`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
+    kind: Rule
+    services:
+    - name: api@internal
+      kind: TraefikService
+```
 
 ## TLS 
 
