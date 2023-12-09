@@ -1,8 +1,8 @@
 ---
-title: Prometheus Setup
+title: Prometheus/Grafana Setup
 description: K8s Monitoring 
 published: true
-date: 2023-12-09T19:03:18.144Z
+date: 2023-12-09T21:18:40.326Z
 tags: k8s, prometheus
 editor: markdown
 dateCreated: 2023-12-07T03:17:13.335Z
@@ -10,13 +10,13 @@ dateCreated: 2023-12-07T03:17:13.335Z
 
 # [WIP] K8s Monitoring with Prometheus
 
-## kube-prometheus-stack
+## Using the kube-prometheus-stack helm chart
 https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack
 
 This helm chart deploys a configures prometheus instance with grafana and metrics systems.
 It includes many preconfigured dashboards
 
-### Installing from Helm Chart
+### Installing from Helm Chart Directly
 ```
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 
@@ -41,7 +41,7 @@ helm install prometheus . --namespace monitoring --create-namespace
 
 The only thing that needs to be updated when running grafana from a subdomain is the ingress
 
-Below is a snippet from the values.yaml file fromnano  the helm chart.
+Below is a snippet from the values.yaml file from the helm chart.
 
 ```yaml
 grafana:
