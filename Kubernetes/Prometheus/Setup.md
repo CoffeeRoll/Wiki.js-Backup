@@ -2,8 +2,8 @@
 title: Prometheus/Grafana Setup
 description: K8s Monitoring 
 published: true
-date: 2023-12-09T21:18:57.184Z
-tags: k8s, prometheus
+date: 2023-12-09T21:20:11.870Z
+tags: k8s, prometheus, grafana, helm
 editor: markdown
 dateCreated: 2023-12-07T03:17:13.335Z
 ---
