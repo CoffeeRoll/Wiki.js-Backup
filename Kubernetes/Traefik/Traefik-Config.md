@@ -2,7 +2,7 @@
 title: Traefik Config
 description: Traefik v2
 published: true
-date: 2023-12-07T02:33:07.038Z
+date: 2023-12-09T21:21:41.559Z
 tags: 
 editor: markdown
 dateCreated: 2023-11-10T05:29:10.772Z
@@ -94,28 +94,3 @@ metadata:
 spec:
   sniStrict: true
 ```
-
-## Rancher Setup [WIP]
-
-1. Create Namespace for Rancher
-```kubectl create namespace cattle-system```
-
-1. Create Secret for TLS
-```kubectl -n cattle-system create secret tls tls-rancher --cert=certs/certs-output/tls.crt --key=certs/certs-output/tls.key```
-
-1. Add Rancher Helm Repository
-```helm repo add rancher-stable https://releases.rancher.com/server-charts/stable```
-
-1. Install Rancher Chart
-```helm install rancher rancher-<CHART_REPO>/rancher --namespace cattle-system --set hostname=<server.hostname> --set replicas=1 --set ingress.tls.source=secret```
-
-1. Wait for Rancher to Start
-```kubectl -n cattle-system rollout status deploy/rancher```
-
-### Uninstalling Rancher
-
-1. Uninstall rancher-webhook
-```helm -n cattle-system uninstall rancher-webhook```
-
-1. Uninstall rancher
-```helm -n cattle-system uninstall rancher```
