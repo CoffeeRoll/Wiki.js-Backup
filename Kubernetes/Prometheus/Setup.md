@@ -2,13 +2,13 @@
 title: Prometheus/Grafana Setup
 description: K8s Monitoring 
 published: true
-date: 2023-12-09T21:18:40.326Z
+date: 2023-12-09T21:18:57.184Z
 tags: k8s, prometheus
 editor: markdown
 dateCreated: 2023-12-07T03:17:13.335Z
 ---
 
-# [WIP] K8s Monitoring with Prometheus
+# K8s Monitoring with Prometheus and Grafana
 
 ## Using the kube-prometheus-stack helm chart
 https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack
