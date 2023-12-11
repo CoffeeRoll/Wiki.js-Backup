@@ -2,7 +2,7 @@
 title: Prometheus/Grafana Setup
 description: K8s Monitoring 
 published: true
-date: 2023-12-09T21:20:11.870Z
+date: 2023-12-11T15:13:23.696Z
 tags: k8s, prometheus, grafana, helm
 editor: markdown
 dateCreated: 2023-12-07T03:17:13.335Z
@@ -107,6 +107,16 @@ grafana:
     GF_SERVER_SERVE_FROM_SUB_PATH: true
     GF_ENFORCE_DOMAIN: false
 ...
+```
+
+the default timezone should also be changed:
+
+```yaml
+grafana:  
+  ## Timezone for the default dashboards
+  ## Other options are: browser or a specific timezone, i.e. Europe/Luxembourg
+  ##
+  defaultDashboardsTimezone: browser
 ```
 
 additional, the ingress section needs to be updated:
