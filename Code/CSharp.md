@@ -2,7 +2,7 @@
 title: USB Peripheral Notes
 description: Identifying and Interacting with USB Devices
 published: true
-date: 2024-03-20T01:18:33.205Z
+date: 2024-03-20T01:19:40.146Z
 tags: c#, usb, code, software, engineering
 editor: markdown
 dateCreated: 2024-03-20T01:18:33.205Z
@@ -15,6 +15,7 @@ Example Code:
 /// <summary>
 /// Access device information using the setup api
 /// Sources:
+/// https://stackoverflow.com/questions/62268979/identify-port-number-for-device-on-usb-hub
 /// https://stackoverflow.com/questions/20174169/is-it-possible-to-get-the-pnpdeviceid-of-a-network-adapter-without-using-wmi
 /// https://learn.microsoft.com/en-us/windows/win32/api/setupapi/nf-setupapi-setupdigetclassdevsw
 /// https://www.lifewire.com/device-class-guids-for-most-common-types-of-hardware-2619208
